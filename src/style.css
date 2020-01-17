@@ -1,15 +1,67 @@
-body, html {
+body, html, #content {
     height: 100%;
     width: 100%;
 }
 body{
     margin: 0;
 }
+.wlcm{
+    position: relative;
+    top: 20%;
+    color: #ececec;
+    font-size: 40px;
+    text-align: center;
+    display: inline-block;
+}
 #home{
-    background-image: url('./img/cucina-home.jpg');
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./img/cucina-home.jpg');
     max-width: 100%;
     height: 100%;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:cover;
+    text-align: center;
 }
 
+
+
+.tabs {
+    margin:  0;
+    padding: 0;
+    list-style: none;
+    display: table; /* [1] */
+    table-layout: fixed; /* [2] */
+    width: 100%; /* [3] */
+}
+
+    .tabs__item {
+        display: table-cell; /* [4] */
+    }
+
+        .tabs__link {
+            display: block; /* [5] */
+        }
+
+
+/**
+ * Primary nav. Extends `.tabs`.
+ *
+ * 1. Stop tabs’ corners leaking out beyond our 4px round.
+ */
+.primary-nav {
+    text-align: center;
+    border-radius: 4px;
+    overflow: hidden; /* [1] */
+    position: fixed;
+}
+
+        .primary-nav a {
+            padding: 1em;
+            background-color: rgba(154, 21, 21, 0.48);
+            color: rgb(11, 123, 4);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .primary-nav a:hover {
+            background-color:rgb(154, 21, 21);
+        }
