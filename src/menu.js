@@ -1,11 +1,7 @@
+import {appendToContent} from './content';
 
 
-// const clickTabs= ()=>{
-//     let tabs= document.querySelectorAll('.tabs__link');
-
-// }
-
-const renderMenu=(imName,text,title)=>{
+const renderCard=(imName,text,title)=>{
     let card= document.createElement('div');
     let img = document.createElement("IMG");
     let h2= document.createElement("h2");
@@ -14,6 +10,7 @@ const renderMenu=(imName,text,title)=>{
     p.textContent=text;
     img.setAttribute("src",`../src/img/${imName}.jpg`);
     img.setAttribute("width", "100%");
+    img.setAttribute("height", "70%");
     card.appendChild(img);
     card.appendChild(h2);
     card.appendChild(p);
@@ -21,6 +18,18 @@ const renderMenu=(imName,text,title)=>{
     document.querySelector('#menu').appendChild(card);
 }
 
+const renderMenu= ()=>{
+    let d= document.createElement('div');
+    d.id='menu';
+    d.style.cssText='margin: 3rem;display: grid;position: relative;top: 10%;gap: 5%;height: 80%;grid-template-columns: repeat(3, 25%);grid-template-rows: repeat(2, 350px);justify-content: center;';
+    appendToContent(d);
+    renderCard('Couscous','','Cous Cous');
+    renderCard('Tajine','','Tajine');
+    renderCard('Pastillas','','Pastilla');
+    renderCard('Harira','','Harira Soup');
+    renderCard('rfissa','','Rfissa');
+    renderCard('Zaalouk','','Zaalouk Salad');
+}
 export {renderMenu};
 //  <div >
 //   <div class="card">
@@ -29,3 +38,4 @@ export {renderMenu};
 //             <p>Experience healthy and tasty dishes</p>
 //   </div>
 // </div> 
+

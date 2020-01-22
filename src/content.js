@@ -1,5 +1,5 @@
+//functions that manage the DOM in content
 const content= document.querySelector('#content');
-
 
 const appendToContent=(element)=>{
     content.appendChild(element);
@@ -12,13 +12,14 @@ const purgeContent=()=>{
 }
 
 const appendHome= ()=>{
-    let el= `<div class="wlcm">
+    let el= `
             <h2>MOROCCAN RESTAURANT</h2>
-            <p>Experience healthy and tasty dishes</p>
-            </div>`;
+            <p>Experience the mediterranean cuisine</p>
+            `;
     let home= document.createElement('div');
     home.innerHTML=el;
-    content.appendChild(home);
+    home.classList.add('wlcm');
+    appendToContent(home);
 };
 export {appendHome,appendToContent,purgeContent}
 
