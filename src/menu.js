@@ -8,7 +8,7 @@ const renderCard=(imName,text,title)=>{
     let p = document.createElement('p');
     h2.textContent=title;
     p.textContent=text;
-    img.setAttribute("src",`../src/img/${imName}.jpg`);
+    img.setAttribute("src",`./assets/img/${imName}.jpg`);
     img.setAttribute("width", "100%");
     img.setAttribute("height", "70%");
     card.appendChild(img);
